@@ -1,0 +1,219 @@
+/*WEB FONTS*/
+@font-face {
+    font-family: 'ralewayregular';
+    src: url(../fonts/raleway-regular-webfont.woff2) format("woff2"),url(../fonts/raleway-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url(../fonts/opensans-regular-webfont.woff2) format("woff2"),url(../fonts/opensans-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*CONTENT*/
+html {
+    font-family: 'open_sansregular',sans-serif;
+    font-size: 100%;
+    line-height: 1;
+    -moz-text-size-adjust: 100%;
+/*remove automatic scaling property of some mobile browsers*/
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+/*autohide scrollbar in IE10+*/
+    overflow-y: scroll;
+/* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background-color: #26BD7B;
+}
+
+:focus {
+    outline: 0 !important;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url(../js/boxsizing.htc);
+/*fallback for IE6-8*/
+}
+
+#logo {
+    color: #26BD7B;
+}
+
+.container {
+    width: 90%;
+    max-width: 30em;
+    margin: 5% auto;
+    border-radius: .75em;
+    background-color: #fff;
+    padding: 0 1.5em;
+    padding-bottom: 1.5em;
+    box-shadow: 0 16px 28px 0 rgba(0,0,0,.8),0 25px 55px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 16px 28px 0 rgba(0,0,0,.8),0 25px 55px 0 rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 16px 28px 0 rgba(0,0,0,.8),0 25px 55px 0 rgba(0,0,0,0.15);
+    behavior: url(../js/PIE.htc);
+/*fix for IE8- and below for box-shadow and/or border-radius*/
+}
+
+h3 {
+    text-align: center;
+    font-family: 'ralewayregular',sans-serif;
+    color: #26BD7B;
+    font-weight: 700;
+    margin: 1em auto;
+}
+
+.row {
+    margin: 0;
+}
+
+.window {
+    width: 98%;
+    height: 3.5em;
+    border: 1px solid #26BD7B;
+    border-radius: .75em;
+    behavior: url(../js/PIE.htc);
+/*fix for IE8- for border-radius*/
+    margin: 1em auto;
+    padding: 1em;
+    text-align: right;
+}
+
+.container ul {
+    list-style: none;
+    display: inline;
+}
+
+.container li {
+    border: 1px solid #26BD7B;
+    padding: 1em 0;
+    text-align: center;
+    width: 23%;
+    margin: 1%;
+    float: left;
+    cursor: pointer;
+/*add support for safari*/
+    display: inline-block;
+/*moz and IE7- fix*/
+}
+
+.container li:hover {
+    color: #fff;
+    background-color: #26BD7B;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.blank {
+    border: none !important;
+}
+
+.blank:hover {
+    color: #fff !important;
+    cursor: default !important;
+    background-color: #fff !important;
+}
+
+/*NAV BAR*/
+#container-nav {
+    background-color: #fff;
+}
+
+#nav {
+    margin: 0 5%;
+    padding: .5em 0;
+}
+
+#nav nav {
+    height: auto;
+    overflow: hidden;
+}
+
+#nav ul {
+    list-style: none;
+    float: right;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5em !important;
+    padding: .75em 1em;
+    cursor: pointer;
+/*add support for safari*/
+/*hacks for moz and ie to display inline-block*/
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+nav a:hover {
+    color: #939393;
+}
+
+#nav h3 {
+    font-family: 'ralewayregular',sans-serif;
+    font-size: 1.5em;
+    float: left;
+    margin: .5em .5em 0 0;
+    color: #000;
+    font-weight: 700;
+}
+
+#nav h3:hover {
+    color: #939393;
+}
+
+#social {
+    margin-top: .5em;
+}
+
+/* Float Clearing http://nicolasgallagher.com/micro-clearfix-hack */
+.group:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.group {
+    *zoom: 1;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 30em) {
+    .main {
+        margin: 0 5%;
+    }
+
+    nav a {
+        padding: .75em .5em !important;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 20em) {
+    .container {
+        position: absolute;
+    /*position content in vertical center of page*/
+        top: 50%;
+        left: 50%;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+}
+
+/*BROWSER SPECIFIC HACKS*/
+@-ms-viewport {
+/*IE10 viewport fix*/
+    width: device-width;
+}

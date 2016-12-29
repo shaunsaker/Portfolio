@@ -23,9 +23,9 @@
 		$m->isSMTP();
 		$m->SMTPAuth = true;
 
-		$m->Host = 'hostname'; //removed for security reasons
-		$m->Username = 'myemailaddress'; //removed for security reasons
-		$m->Password = 'mypassword'; //removed for security reasons
+		$m->Host = 'cp06-jhb.za-dns.com';
+		$m->Username = 'info@shaunsaker.com';
+		$m->Password = 'Reason11!';
 		$m->SMTPSecure = 'ssl';
 		$m->Port = 465;
 
@@ -33,9 +33,9 @@
 
 		$m->From = $email;
 		$m->FromName = $name;
-		$m->addReplyTo = ('myemailaddress'); //removed for security reasons
-		$address = "myemailaddress"; //removed for security reasons
-		$m->AddAddress($address, "myname"); //removed for security reasons
+		$m->addReplyTo = ('info@shaunsaker.com');
+		$address = "info@shaunsaker.com";
+		$m->AddAddress($address, "Shaun Saker");
 
 		$m->Subject  = 'Portfolio';
 		$m->Body = '<h3>' . $name . '</h3><p>sent you an email via your portfolio.</p>' . '<p>' . $message . '</p>';

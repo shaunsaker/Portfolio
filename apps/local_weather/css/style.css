@@ -1,0 +1,143 @@
+/* COLOUR PALETTE */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"), url(../fonts/0dTEPzkLWceF7z0koJaX1A.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #414345; }
+
+.row {
+  margin: 0; }
+
+/* NAVBAR */
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #d4d4d4; }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #FFF; }
+
+.navbar a.active,
+.navbar a.active:focus,
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > li > a.hover {
+  color: #FFF; }
+
+.container-fluid {
+  padding: 0; }
+
+.navbar {
+  position: absolute;
+  border-radius: 0;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.75s ease;
+  border: none;
+  border-bottom: 1px solid #FFF;
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526, #414345);
+  background: linear-gradient(to left, #232526, #414345);
+  z-index: 1; }
+
+.navbar li a {
+  transition: color 0.5s ease; }
+
+.navbar-default .navbar-brand {
+  text-transform: uppercase; }
+
+.nav > li {
+  text-align: center; }
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: #d4d4d4;
+  border-color: #FFF; }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFF; }
+
+.nav a i {
+  font-size: 18px; }
+
+/* CONTENT */
+.content {
+  height: 100vh;
+  position: relative;
+  background: #d4d4d4;
+  background: -webkit-linear-gradient(to top, #d4d4d4, #FFF);
+  background: linear-gradient(to top, #d4d4d4, #FFF); }
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.container {
+  width: 50%;
+  min-width: 18em;
+  max-width: 30em;
+  margin: 5% auto;
+  background-color: #232526;
+  border-radius: .75em;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.5); }
+
+.weather {
+  text-align: center; }
+
+#temp a {
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer; }
+
+#temp a:hover {
+  color: #FFF; }
+
+#summary i {
+  font-size: 3em;
+  font-weight: 700; }
+
+.weather h3 {
+  margin: 10% auto;
+  color: #d4d4d4; }
+
+#title {
+  text-align: center;
+  color: #FFF;
+  margin-top: 10%;
+  margin-bottom: 0; }
+
+/* Float Clearing http://nicolasgallagher.com/micro-clearfix-hack */
+.group:after {
+  content: " ";
+  display: table;
+  clear: both; }
+
+.group {
+  *zoom: 1; }
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 30em) {
+  .content h3 {
+    margin: 10% auto; } }
+/* FOOTER */
+footer {
+  border-top: 1px solid #FFF;
+  background: #232526;
+  background: -webkit-linear-gradient(to left, #232526, #414345);
+  background: linear-gradient(to left, #232526, #414345);
+  text-align: center;
+  color: #FFF;
+  padding: 15px 0; }
+
+footer p {
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */

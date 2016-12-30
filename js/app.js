@@ -65,7 +65,7 @@ function scrollToID(id, speed) {
     }, speed);
 }
 
-$('.navbar a').on('click', function(e) {
+$('.navbar a:not(#resume').on('click', function(e) {
     e = e || window.e; //fix for IE9-
     e.preventDefault();
     var sectionID = $(this).attr("href");

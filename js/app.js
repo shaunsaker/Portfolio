@@ -249,7 +249,6 @@ if (canvas && canvas.getContext) {
 /* MODAL/IFRAME FUNCTIONS */
 
 $("#examples .hoverwrapper").on("click", function() {
-
     var iframeHeight = $("#modal .carousel-inner").height() * 75/100;
     $("#modal iframe").css("height", iframeHeight);
     $("#modal .description").css("height", iframeHeight);

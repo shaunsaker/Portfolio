@@ -84,20 +84,20 @@
                     </div>
                     <div class="hoverwrapper col-md-4">
                       <img class="laptop" src="img/laptop.png" alt="Laptop" >
-                      <img class="example" src="img/examples/wikipedia.png" alt="Wikipedia Search App" data-link="apps/wikipedia/">
-                      <h4>Wikipedia Search App</h4>
-                    </div>
+                      <img class="example" src="img/examples/tictactoe.png" alt="Tic Tac Toe App" data-link="apps/tic_tac_toe/">
+                      <h4>Tic Tac Toe App</h4>
+                    </div>                 
                   </div>
                   <div class="item">
                     <div class="hoverwrapper col-md-4">
                       <img class="laptop" src="img/laptop.png" alt="Laptop" >
-                      <img class="example" src="img/examples/tictactoe.png" alt="Tic Tac Toe App" data-link="apps/tic_tac_toe/">
-                      <h4>Tic Tac Toe App</h4>
+                      <img class="example" src="img/examples/pomodoro.png" alt="Pomodoro Clock App" data-link="apps/pomodoro_clock/">
+                      <h4>Pomodoro Clock App</h4>
                     </div>
                     <div class="hoverwrapper col-md-4">
                       <img class="laptop" src="img/laptop.png" alt="Laptop" >
-                      <img class="example" src="img/examples/pomodoro.png" alt="Pomodoro Clock App" data-link="apps/pomodoro_clock/">
-                      <h4>Pomodoro Clock App</h4>
+                      <img class="example" src="img/examples/wikipedia.png" alt="Wikipedia Search App" data-link="apps/wikipedia/">
+                      <h4>Wikipedia Search App</h4>
                     </div>
                      <div class="hoverwrapper col-md-4">
                       <img class="laptop" src="img/laptop.png" alt="Laptop" >
@@ -143,11 +143,139 @@
                   </button>
                   <div class="modaldesc">
                     <h1>Title</h1>
-                    <a class="btn btn-default" href="" target="_blank">Go to App</a>
+                    <a id="sitelink" class="btn btn-default applink" href="" target="_blank">Go to App</a>
+                    <a id="gitlink" class="btn btn-default applink gitlink" href="" target="_blank">View App on Github</a>
                   </div>
                 </div>
                 <div class="modal-body">
-                  <iframe src="" width="95%"></iframe>
+                  <div id="modal-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <ol class="carousel-indicators">
+                      <li data-target="#modal-carousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#modal-carousel" data-slide-to="1" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="2" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="3" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="4" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="5" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="6" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active first">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/markdown_previewer/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/markdown_previewer/">React Markdown Previewer App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can type GitHub-flavored Markdown into a text area.</p></li>
+                            <li><p><b>2. </b> I can see a preview of the output of my markdown that is updated as I type.</p></li>
+                          </ul>
+                         </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/simon_game/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/simon_game/">Simon Says App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> Front End Development Certification.</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I am presented with a random series of button presses.</p></li>
+                            <li><p><b>2.</b> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.</p></li>
+                            <li><p><b>3.</b> I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.</p></li>
+                            <li><p><b>4. </b> If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.</p></li>
+                            <li><p><b>5.</b> I can see how many steps are in the current series of button presses.</p></li>
+                            <li><p><b>6. </b> If I want to restart, I can hit a button to do so, and the game will return to a single step.</p></li>
+                            <li><p><b>7.</b> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.</p></li>
+                            <li><p><b>8. </b> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/tic_tac_toe/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/tic_tac_toe/">Tic Tac Toe App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> Front End Development Certification.</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can play a game of Tic Tac Toe with the computer.</p></li>
+                            <li><p><b>2. </b> My game will reset as soon as it's over so I can play again.</p></li>
+                            <li><p><b>3. </b> I can choose whether I want to play as X or O.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/pomodoro_clock/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/pomodoro_clock/">Pomodoro Clock App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.</p></li>
+                            <li><p><b>2. </b> I can reset the clock for my next pomodoro.</p></li>
+                            <li><p><b>2. </b> I can customize the length of each pomodoro.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/wikipedia/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/wikipedia/">Wikipedia Search App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.</p></li>
+                            <li><p><b>2. </b> I can click a button to see a random Wikipedia entry.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/random_quote_machine/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/random_quote_machine/">Random Quote Machine App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can click a button to show me a new random quote.</p></li>
+                            <li><p><b>2. </b> I can press a button to tweet out a quote.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item last">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src="apps/javascript_calculator/"></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/javascript_calculator/">Javascript Calculator App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can add, subtract, multiply and divide two numbers.</p></li>
+                            <li><p><b>2. </b> I can clear the input field with a clear button.</p></li>
+                            <li><p><b>3. </b> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#modal-carousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#modal-carousel" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,6 +310,7 @@
                 <li><a href="https://www.mongodb.com/" target="_blank"><img src="img/skills/mongodb.png" alt="MongoDB" ></a></li>
                 <li><a href="https://www.npmjs.com/" target="_blank"><img src="img/skills/npm.png" alt="Npm" ></a></li>
                 <li><a href="https://webpack.github.io/docs/" target="_blank"><img src="img/skills/webpack.png" alt="Webpack" ></a></li>
+                <li><a href="https://babeljs.io/" target="_blank"><img src="img/skills/babel.png" alt="Babel" ></a></li>
                 <li><a href="gulpjs.com/" target="_blank"><img src="img/skills/gulp.png" alt="Gulp" ></a></li>
                 <li><a href="backbonejs.org/" target="_blank"><img src="img/skills/backbone.png" alt="Backbone" ></a></li>
               </ul>

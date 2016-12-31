@@ -27,6 +27,17 @@ body {
   margin: 0;
 }
 
+/* FORMS */
+
+.form-control {
+  padding: 24px;
+}
+
+.form-control:focus {
+  border-color: $bgDark;
+  box-shadow: 0 1px 1px $bgLight;
+}
+
 /* NAVBAR */
 
 .navbar-default .navbar-brand,
@@ -98,9 +109,13 @@ body {
   padding: 2.5% 5%;
 }
 
+.textarea.form-control {
+  height: 500px;
+}
 
 .output {
   border: 1px solid black;
+  border-radius: 4px;
 }
 
 /* FOOTER */

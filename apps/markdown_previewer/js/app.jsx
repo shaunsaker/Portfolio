@@ -17,7 +17,7 @@ var MarkdownPreviewer = React.createClass({
       <div className = "row">
         <div className = "col-md-6">
           <h1>Insert Markdown Here</h1>
-          <textarea className = "textarea" onChange = {this.handleUserInput} value = {this.state.userInput}/>
+          <textarea className = "textarea form-control" onChange = {this.handleUserInput} value = {this.state.userInput}/>
         </div>
         <Output value = {this.convertMarkdown(this.state.userInput)}/>
       </div>

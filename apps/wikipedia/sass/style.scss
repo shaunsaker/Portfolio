@@ -24,6 +24,17 @@ body {
   margin: 0;
 }
 
+/* FORMS */
+
+.form-control {
+  padding: 24px;
+}
+
+.form-control:focus {
+  border-color: $bgDark;
+  box-shadow: 0 1px 1px $bgLight;
+}
+
 /* NAVBAR */
 
 .navbar-default .navbar-brand,
@@ -104,7 +115,7 @@ body {
     max-width: 36em;
     margin: 2.5% auto;
     background-color: $black;
-    border-radius: .75em;
+    border-radius: 4px;
     padding: 2.5%;
     box-shadow: $boxshadow;
 }
@@ -156,14 +167,10 @@ button p {
     line-height: 2;
     text-align: center;
     font-size: 1em;
-    padding: 0;
     width: 100%;
-    box-shadow: none;
-    border: $border;
 }
 
 .form-control {
-    border-radius: .75em;
     max-width: 28em;
     margin: 5% auto;
     color: $black;
@@ -177,10 +184,8 @@ a.btn {
     max-width: 15em;
     padding: 0 1em;
     border: $border;
-    border-radius: .75em;
     margin: 2.5% auto;
     font-size: 1em;
-    line-height: 2.5;
     color: $black;
     text-transform: uppercase;
     cursor: pointer;
@@ -197,6 +202,20 @@ a.btn:hover {
     background: $white !important;
     box-shadow: none !important;
 }
+
+/* BUTTONS */
+
+.btn.btn-default {
+  color: $white;
+  border: none;
+  background-color: $bgDark;
+  transition: all 0.5s ease;
+  padding: 12px 24px; }
+
+.btn.btn-default:hover, .btn.btn-default:focus {
+  background-color: $bgLight;
+  color: $bgDark;
+  font-weight: 700; }
 
 /* Float Clearing http://nicolasgallagher.com/micro-clearfix-hack */
 .group:after {

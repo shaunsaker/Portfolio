@@ -15,6 +15,14 @@ body {
 .row {
   margin: 0; }
 
+/* FORMS */
+.form-control {
+  padding: 24px; }
+
+.form-control:focus {
+  border-color: #556270;
+  box-shadow: 0 1px 1px #d4d4d4; }
+
 /* NAVBAR */
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a,
@@ -79,8 +87,12 @@ body {
   overflow: auto;
   padding: 2.5% 5%; }
 
+.textarea.form-control {
+  height: 500px; }
+
 .output {
-  border: 1px solid black; }
+  border: 1px solid black;
+  border-radius: 4px; }
 
 /* FOOTER */
 footer {

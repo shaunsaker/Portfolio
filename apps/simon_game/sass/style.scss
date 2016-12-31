@@ -148,7 +148,7 @@ li {
     height: 3em;
     line-height: 3;
     border: $border;
-    border-radius: .75em;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -176,7 +176,7 @@ ul {
 
 .group {
   padding: 5%;
-  border-radius: 0.75em;
+  border-radius: 4px;
   border: $border;
 }
 

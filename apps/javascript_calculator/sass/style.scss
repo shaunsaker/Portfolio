@@ -110,7 +110,7 @@ body {
     width: 90%;
     max-width: 30em;
     margin: 5% auto;
-    border-radius: .75em;
+    border-radius: 4px;
     background-color: $black;
     padding: 0 1.5em;
     padding-bottom: 1.5em;
@@ -133,7 +133,7 @@ h3 {
     width: 98%;
     height: 3.5em;
     border: $border;
-    border-radius: .75em;
+    border-radius: 4px;
     margin: 1em auto;
     padding: 1em;
     text-align: right;
@@ -149,6 +149,7 @@ h3 {
 
 .container li {
     border: $border;
+    boder-radius: 4px;
     padding: 1em 0;
     text-align: center;
     width: 23%;

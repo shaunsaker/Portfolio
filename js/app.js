@@ -265,6 +265,9 @@ $("#examples .hoverwrapper").on("click", function() {
         if ($(value).find("h3").text() === title) {
             $(value).addClass("active");
             $($("#modal .carousel-indicators li")[index]).addClass("active");
+            if (!$(value).find("iframe").attr("src")) {
+                $(value).find("iframe").attr("src", target);
+            }
         }
         else {
             $(value).removeClass("active");
@@ -282,6 +285,9 @@ function updateModal(slide) {
 
     $(".modal-header h1").text(title);
     $("#sitelink").attr("href", target);
+    if (!$(slide).find("iframe").attr("src")) {
+        $(slide).find("iframe").attr("src", target);
+    }
     $("#gitlink").attr("href", gitTarget);
 }
 

@@ -61,6 +61,22 @@ body {
   background: linear-gradient(to left, $black, $grey);
   z-index: 1; }
 
+.navbar-content {
+  padding: 0 15px;
+}
+
+.navbar-header {
+  float: left !important;
+}
+
+.navbar-right {
+  float: right !important;
+}
+
+.nav>li {
+  display: inline-block;
+}
+
 .navbar li a {
   transition: color 0.5s ease; }
 
@@ -124,7 +140,7 @@ body {
 }
 
 .buttons {
-    float: left;
+    display: inline-block;
 }
 
 .author {
@@ -136,7 +152,7 @@ ul {
 }
 
 .padder {
-    padding-top: 2em;
+    padding: 0;
 }
 
 #author {

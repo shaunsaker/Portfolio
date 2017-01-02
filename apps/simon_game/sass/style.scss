@@ -318,6 +318,17 @@ footer p {
 
 /* MEDIA QUERIES */
 
+@media (max-width: 286px) {
+  .navbar-header, .navbar-nav  {
+    float: none !important;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    width: 100%;
+  }
+}
+
 @media (max-width: 720px) and (max-height: 600px) {
   .container {
     position: static;

@@ -239,6 +239,17 @@ footer p {
 
 /* MEDIA QUERIES */
 
+@media (max-width: 286px) {
+  .navbar-header, .navbar-nav  {
+    float: none !important;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 26em) {
     #container {
         margin: 5% auto;

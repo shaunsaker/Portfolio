@@ -122,6 +122,83 @@ function typeWriter(location, phrase, index, interval) {
 
 typeWriter("#typewriter h1", heading, 0, duration);
 
+
+/* MODAL/IFRAME FUNCTIONS */
+
+$("#examples .hoverwrapper").on("click", function() {
+    var iframeHeight = $("#modal .carousel-inner").height() * 75/100;
+    $("#modal iframe").css("height", iframeHeight);
+    $("#modal .description").css("height", iframeHeight);
+
+    var title = $(this).children("h4").text();
+    $(".modal-header h1").text(title);
+
+    var target = $(this).children(".example").attr("data-link");
+    var gitTarget = "https://github.com/shaunsaker/Portfolio/tree/master/" + target;
+    $("#sitelink").attr("href", target);
+    $("#gitlink").attr("href", gitTarget);
+
+    $("#modal .item").each(function(index, value) {
+        if ($(value).find("h3").text() === title) {
+            $(value).addClass("active");
+            $($("#modal .carousel-indicators li")[index]).addClass("active");
+            if (!$(value).find("iframe").attr("src")) {
+                $(value).find("iframe").attr("src", target);
+            }
+        }
+        else {
+            $(value).removeClass("active");
+            $($("#modal .carousel-indicators li")[index]).removeClass("active");
+        }
+    });
+
+    $("#modal").modal("show");  
+});
+
+function updateModal(slide) {
+    var title = $(slide).find(".description h3").text();
+    var target = $(slide).find(".description h3").attr("data-link");
+    var gitTarget = "https://github.com/shaunsaker/Portfolio/tree/master/" + target;
+
+    $(".modal-header h1").text(title);
+    $("#sitelink").attr("href", target);
+    if (!$(slide).find("iframe").attr("src")) {
+        $(slide).find("iframe").attr("src", target);
+    }
+    $("#gitlink").attr("href", gitTarget);
+}
+
+$("#modal .carousel-control").on("click", function() {
+    if ($(this).hasClass("right")) {
+        if ($("#modal .item.active").hasClass("last")) {
+            var newSlide = $("#modal .item").first();
+        }
+        else {
+            var newSlide = $("#modal .item.active").next();
+        }
+    }
+    else {
+        if ($("#modal .item.active").hasClass("first")) {
+            var newSlide = $("#modal .item").last();
+        }
+        else {
+            var newSlide = $("#modal .item.active").prev();
+        }
+    }
+    updateModal(newSlide);
+});
+
+$("#modal .carousel-indicators li").on("click", function() {
+    var index = $(this).attr("data-slide-to");
+    var newSlide = $("#modal .item")[index];
+    updateModal(newSlide);
+});
+
+$("#modal .close").on("click", function() {
+    $(".modal-header h1").text("");
+    $(".modal-header a").attr("href", "");
+});
+
 /* CANVAS FUNCTIONS */
 
 function init() {
@@ -245,79 +322,3 @@ if (canvas && canvas.getContext) {
         })
     }
 })($);
-
-/* MODAL/IFRAME FUNCTIONS */
-
-$("#examples .hoverwrapper").on("click", function() {
-    var iframeHeight = $("#modal .carousel-inner").height() * 75/100;
-    $("#modal iframe").css("height", iframeHeight);
-    $("#modal .description").css("height", iframeHeight);
-
-    var title = $(this).children("h4").text();
-    $(".modal-header h1").text(title);
-
-    var target = $(this).children(".example").attr("data-link");
-    var gitTarget = "https://github.com/shaunsaker/Portfolio/tree/master/" + target;
-    $("#sitelink").attr("href", target);
-    $("#gitlink").attr("href", gitTarget);
-
-    $("#modal .item").each(function(index, value) {
-        if ($(value).find("h3").text() === title) {
-            $(value).addClass("active");
-            $($("#modal .carousel-indicators li")[index]).addClass("active");
-            if (!$(value).find("iframe").attr("src")) {
-                $(value).find("iframe").attr("src", target);
-            }
-        }
-        else {
-            $(value).removeClass("active");
-            $($("#modal .carousel-indicators li")[index]).removeClass("active");
-        }
-    });
-
-    $("#modal").modal("show");  
-});
-
-function updateModal(slide) {
-    var title = $(slide).find(".description h3").text();
-    var target = $(slide).find(".description h3").attr("data-link");
-    var gitTarget = "https://github.com/shaunsaker/Portfolio/tree/master/" + target;
-
-    $(".modal-header h1").text(title);
-    $("#sitelink").attr("href", target);
-    if (!$(slide).find("iframe").attr("src")) {
-        $(slide).find("iframe").attr("src", target);
-    }
-    $("#gitlink").attr("href", gitTarget);
-}
-
-$("#modal .carousel-control").on("click", function() {
-    if ($(this).hasClass("right")) {
-        if ($("#modal .item.active").hasClass("last")) {
-            var newSlide = $("#modal .item").first();
-        }
-        else {
-            var newSlide = $("#modal .item.active").next();
-        }
-    }
-    else {
-        if ($("#modal .item.active").hasClass("first")) {
-            var newSlide = $("#modal .item").last();
-        }
-        else {
-            var newSlide = $("#modal .item.active").prev();
-        }
-    }
-    updateModal(newSlide);
-});
-
-$("#modal .carousel-indicators li").on("click", function() {
-    var index = $(this).attr("data-slide-to");
-    var newSlide = $("#modal .item")[index];
-    updateModal(newSlide);
-});
-
-$("#modal .close").on("click", function() {
-    $(".modal-header h1").text("");
-    $(".modal-header a").attr("href", "");
-});

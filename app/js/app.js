@@ -1,5 +1,11 @@
 /* NAVBAR FUNCTIONS */
 
+// Navicon
+
+$(".navicon-button").click(function(){
+  $(this).toggleClass("open");
+});
+
 // Navbar active anchors on scroll
 
 var sections = $(".section");

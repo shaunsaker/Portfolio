@@ -5,6 +5,7 @@ $bgLight: #d4d4d4;
 $black: #232526;
 $grey: #414345;
 $white: #FFF;
+$duration: 0.5s;
 
 @font-face {
   font-family: 'Raleway';
@@ -103,13 +104,97 @@ a:hover, a:active, a:focus {
   text-align: center;
 }
 
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-  background-color: $bgLight;
-  border-color: $white;
+.navbar-default .navbar-toggle {
+  border: none;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+/* NAVICON */
+
+$duration: .5s;
+$size : 100%;
+$toggled-size : .75;
+
+.navicon-button {
+  display: inline-block;
+  position: relative;
+  padding: 2.0625rem 1.5rem;
+  transition: $duration/2;
+  cursor: pointer;
+  user-select: none;
+  opacity: .8;
+  margin: 0;
+  margin-top: 3px;
+
+  .navicon:before, .navicon:after {
+    transition: $duration/2;
+  }
+
+  &:hover {
+    transition: $duration;
+    opacity: 1;
+
+    .navicon:before, .navicon:after {
+      transition: $duration/2;
+    }
+
+    .navicon:before { top: .825rem; }
+    .navicon:after { top: -.825rem; }
+  }
+}
+
+.navicon {
+  position: relative;
+  width: 2em;
+  height: .3125rem;
+  transition: $duration;
+  border-radius: 2.5rem;
   background-color: $white;
+
+  &:before, &:after {
+    display: block;
+    content: "";
+    height: .3125rem;
+    width: 2em;
+    position: absolute;
+    transition: $duration $duration/2;
+    border-radius: 1rem;
+    background-color: $white;
+  }
+
+  &:before { top: .625rem; }
+  &:after { top: -.625rem; }
+}
+
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {
+  top: 0 !important;
+}
+
+.open .navicon:before,
+.open .navicon:after {
+  transition: $duration;
+}
+
+/* Minus */
+.open { transform: scale($toggled-size); }
+
+.open.x {
+  .navicon {
+    background: transparent;
+
+    &:before { transform: rotate(-45deg); }
+    &:after { transform: rotate(45deg); }
+  }
+}
+
+@media (min-width: 768px) {
+  .navicon {
+    display: none;
+  }
 }
 
 /* JUMBOTRON */

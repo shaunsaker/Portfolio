@@ -5,7 +5,6 @@ $bgLight: #d4d4d4;
 $black: #232526;
 $grey: #414345;
 $white: #FFF;
-$duration: 0.5s;
 
 @font-face {
   font-family: 'Raleway';
@@ -66,14 +65,24 @@ a:hover, a:active, a:focus {
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-nav > li > a:focus {
-  color: $bgLight; }
+  color: $bgLight; 
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-nav > li > a:hover {
-  color: $white; }
+  &:hover {
+    color: $white;
+  }
+}
 
-.navbar a.active,
-.navbar a.active:focus,
+.navbar-default .navbar-brand:hover {
+  color: $bgLight; 
+}
+
+.navbar-default .navbar-brand span:hover {
+  color: $white;
+  transition: color 0.25s ease;
+}
+
+.navbar a.active span,
+.navbar a.active span:focus,
 .navbar-default .navbar-nav > li > a.active,
 .navbar-default .navbar-nav > li > a.hover {
   color: $white; }
@@ -95,13 +104,14 @@ a:hover, a:active, a:focus {
   z-index: 1; }
 
 .navbar li a {
-  transition: color 0.5s ease; }
+  transition: color 0.5s linear; }
 
 .navbar-default .navbar-brand {
   text-transform: uppercase; }
 
-.nav>li {
+.nav>li, .navbar-brand {
   text-align: center;
+  text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
 }
 
 .navbar-default .navbar-toggle {
@@ -111,6 +121,51 @@ a:hover, a:active, a:focus {
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   background-color: transparent;
 }
+
+/* NAV HOVER SLIDE */
+
+.list-hover-slide {
+  
+  li {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: .35s ease color;
+    
+    &:before {
+      content: '';
+      display: block;
+      z-index: -1;
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      border-bottom: 2px solid $bgLight;
+      transition: .35s ease left;
+    }
+    
+    &:hover{
+      
+      &:before{
+        left: 0;
+      }
+    }
+  }
+
+  a.active {
+    &:before {
+      left: 0 !important;
+    }
+  }
+}
+
+/* NAV JELLY */
+
+
 
 /* NAVICON */
 

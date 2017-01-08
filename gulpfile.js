@@ -11,7 +11,7 @@ var gutil = require('gulp-util');
 
 // Paths
 var sassFiles = 'app/**/*.scss',
-	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js'],
+	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js', '!app/lib/**/*'],
 	htmlFiles = 'app/**/*.html';
 
 gulp.task('browserSync', function() {

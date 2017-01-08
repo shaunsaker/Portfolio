@@ -6,6 +6,57 @@ $(".navicon-button").click(function(){
   $(this).toggleClass("open");
 });
 
+// Jelly Nav
+
+// var w = $(".nav > li").first().width();
+
+// var move = function(x) {
+    
+//     if( $.type(x) === "number" ) {
+//         var l = x;
+//     } else if( x instanceof $ ) {
+//         var l = x.position().left;
+//     } else {
+//         l = 0;
+//     }
+
+//     var r = $(".nav").width() - (w + l);
+//     var original = $(".jelly").position().left;
+//     var dir = "right";
+
+//     $(".jelly").removeClass("left right");
+
+//     if( l < original ) {
+//         dir = "left";
+//     }
+    
+//     $(".jelly")
+//         .addClass( dir )
+//         .css("left", l )
+//         .css("right", r );
+        
+//     $(x)
+//         .addClass("selected")
+//         .siblings()
+//         .removeClass("selected");
+
+// }
+
+// var p = 1;
+// move($(".nav > li").eq(0));
+// var ii = setInterval(function() {
+//    if(p>=5){p=0;}
+//     move($(".nav > li").eq(p));
+//     p++;
+// },2000);
+
+// $(".nav > li").on("click", function() {
+    
+//     clearInterval(ii);
+//     move($(this));
+    
+// });
+
 // Navbar active anchors on scroll
 
 var sections = $(".section");

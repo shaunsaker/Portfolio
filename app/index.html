@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shaun Saker | Web Developer</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+
+  </head>
+
+    <body class="wrapper">
+        <div class="section" id="home">
+          <div class="container-fluid">
+              <nav class="navbar navbar-default">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">Shaun Saker</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#examples">Portfolio</a></li>
+                      <li><a href="#skills">Skills</a></li>
+                      <li><a href="#contact">Get in Touch</a></li>
+                      <li><a id="resume" href="docs/Shaun_Saker_Resume_2017.pdf" target="_blank">Resume</a></li>
+                    </ul>
+                  </div>
+              </nav>
+          </div>
+          <canvas id="canvas" width="1920" height="950" style="display: inline;">Your browser does not support the Canvas element.</canvas>
+          <div class="jumbotron">
+              <div class="container" id="typewriter">
+                <h1></h1>
+                <p></p>
+              </div>
+          </div>
+          <div class="container learn">
+            <h4>Learn more about what I do</h4>
+            <a class="learnmore">
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="section" id="examples">
+          <div class="container-fluid">
+            <div class="row">
+              <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel" data-slide-to="1" class=""></li>
+                  <li data-target="#carousel" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/fcc_leaderboard.png" alt="Free Code Camp Leaderboard App" data-link="apps/fcc_leaderboard/">
+                      <h4>Free Code Camp Leaderboard App</h4>
+                    </div>
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/markdownpreviewer.png" alt="React Markdown Previewer App" data-link="apps/markdown_previewer/">
+                      <h4>React Markdown Previewer App</h4>
+                    </div>
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/simonsays.png" alt="Simon Says App" data-link="apps/simon_game/">
+                      <h4>Simon Says App</h4>
+                    </div>                
+                  </div>
+                  <div class="item">
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/tictactoe.png" alt="Tic Tac Toe App" data-link="apps/tic_tac_toe/">
+                      <h4>Tic Tac Toe App</h4>
+                    </div> 
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/pomodoro.png" alt="Pomodoro Clock App" data-link="apps/pomodoro_clock/">
+                      <h4>Pomodoro Clock App</h4>
+                    </div>
+                     <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/wikipedia.png" alt="Wikipedia Search App" data-link="apps/wikipedia/">
+                      <h4>Wikipedia Search App</h4>
+                    </div>
+                  </div>
+                  <div class="item">
+                     <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/randomquote.png" alt="Random Quote Machine App" data-link="apps/random_quote_machine/">
+                      <h4>Random Quote Machine App</h4>
+                    </div>
+                    <div class="hoverwrapper col-md-4">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="img/examples/jscalc.png" alt="Javascript Calculator App" data-link="apps/javascript_calculator/">
+                      <h4>Javascript Calculator App</h4>
+                    </div>
+                    <div class="hoverwrapper col-md-4 noshow">
+                      <img class="laptop" src="img/laptop.png" alt="Laptop" >
+                      <img class="example" src="" alt="" data-link="">
+                      <h4>Local Weather App</h4>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="modaldesc">
+                    <h1>Title</h1>
+                    <a id="sitelink" class="btn btn-default applink" href="" target="_blank">Go to App</a>
+                    <a id="gitlink" class="btn btn-default applink gitlink" href="" target="_blank">View App on Github</a>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div id="modal-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <ol class="carousel-indicators">
+                      <li data-target="#modal-carousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#modal-carousel" data-slide-to="1" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="2" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="3" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="4" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="5" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="6" class=""></li>
+                      <li data-target="#modal-carousel" data-slide-to="7" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item first">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/fcc_leaderboard/">Free Code Camp Leaderboard App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course.</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.</p></li>
+                            <li><p><b>2. </b> I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.</p></li>
+                            <li><p><b>3. </b> I can toggle between sorting the list by how many brownie points they've earned in the past 30 days and by how many brownie points they've earned total.</p></li>
+                          </ul>
+                         </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/markdown_previewer/">React Markdown Previewer App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can type GitHub-flavored Markdown into a text area.</p></li>
+                            <li><p><b>2. </b> I can see a preview of the output of my markdown that is updated as I type.</p></li>
+                          </ul>
+                         </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/simon_game/">Simon Says App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> Front End Development Certification.</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I am presented with a random series of button presses.</p></li>
+                            <li><p><b>2.</b> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.</p></li>
+                            <li><p><b>3.</b> I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.</p></li>
+                            <li><p><b>4. </b> If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.</p></li>
+                            <li><p><b>5.</b> I can see how many steps are in the current series of button presses.</p></li>
+                            <li><p><b>6. </b> If I want to restart, I can hit a button to do so, and the game will return to a single step.</p></li>
+                            <li><p><b>7.</b> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.</p></li>
+                            <li><p><b>8. </b> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/tic_tac_toe/">Tic Tac Toe App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> Front End Development Certification.</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can play a game of Tic Tac Toe with the computer.</p></li>
+                            <li><p><b>2. </b> My game will reset as soon as it's over so I can play again.</p></li>
+                            <li><p><b>3. </b> I can choose whether I want to play as X or O.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/pomodoro_clock/">Pomodoro Clock App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.</p></li>
+                            <li><p><b>2. </b> I can reset the clock for my next pomodoro.</p></li>
+                            <li><p><b>3. </b> I can customize the length of each pomodoro.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/wikipedia/">Wikipedia Search App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.</p></li>
+                            <li><p><b>2. </b> I can click a button to see a random Wikipedia entry.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/random_quote_machine/">Random Quote Machine App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can click a button to show me a new random quote.</p></li>
+                            <li><p><b>2. </b> I can press a button to tweet out a quote.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="item last">
+                        <div class="col-md-6 iframe">
+                          <iframe width="75%" src=""></iframe>
+                        </div>
+                        <div class="col-md-6 description">
+                          <h3 data-link="apps/javascript_calculator/">Javascript Calculator App</h3>
+                          <p class="caption">I created this app as part of the <a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a> React JS course (my very first React app).</p>
+                          <p>The following user stories were fulfilled:</p>
+                          <ul class="userstories">
+                            <li><p><b>1.</b> I can add, subtract, multiply and divide two numbers.</p></li>
+                            <li><p><b>2. </b> I can clear the input field with a clear button.</p></li>
+                            <li><p><b>3. </b> I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output.</p></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#modal-carousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#modal-carousel" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container learn">
+            <a class="learnmore">
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="section" id="skills">
+          <div class="container-fluid">
+              <div class="row">
+                <h1>Skills</h1>
+              </div>
+              <ul class="skillsbox">
+                <li><a href="https://www.w3.org/TR/html5/" target="_blank"><img src="img/skills/html5.png" alt="HTML5" ></a></li>
+                <li><a href="https://www.w3.org/standards/techs/css" target="_blank"><img src="img/skills/css3.png" alt="CSS3" ></a></li>
+                <li><a href="https://www.w3.org/standards/webdesign/script" target="_blank"><img src="img/skills/js5.png" alt="Javascript" ></a></li>
+                <li><a href="https://jquery.com/" target="_blank"><img src="img/skills/jquery.png" alt="Jquery" ></a></li>
+                <li><a href="getbootstrap.com/"><img src="img/skills/bootstrap.png" alt="Bootstrap" ></a></li>
+                <li><a href="www.w3schools.com/html/html_responsive.asp" target="_blank"><img src="img/skills/responsivedesign.png" alt="Responsive Design" ></a></li>
+                <li><a href="https://git-scm.com/" target="_blank"><img src="img/skills/git.png" alt="Git" ></a></li>
+                <li><a href="https://github.com/" target="_blank"><img src="img/skills/github.png" alt="Github" ></a></li>
+                <li><a href="https://www.python.org/" target="_blank"><img src="img/skills/python.png" alt="Python" ></a></li>
+                <li><a href="sass-lang.com/" target="_blank"><img src="img/skills/sass.png" alt="Sass" ></a></li>
+                <li><a href="lesscss.org/" target="_blank"><img src="img/skills/less.png" alt="Less" ></a></li>
+                <li><a href="https://facebook.github.io/react" target="_blank"><img src="img/skills/reactjs.png" alt="React" ></a></li>
+                <li><a href="https://angularjs.org/" target="_blank"><img src="img/skills/angularjs.png" alt="Angular" ></a></li>
+                <li><a href="https://nodejs.org/" target="_blank"><img src="img/skills/nodejs.png" alt="Node" ></a></li>
+                <li><a href="expressjs.com/" target="_blank"><img src="img/skills/express.png" alt="Express" ></a></li>
+                <li><a href="https://www.mongodb.com/" target="_blank"><img src="img/skills/mongodb.png" alt="MongoDB" ></a></li>
+                <li><a href="https://www.npmjs.com/" target="_blank"><img src="img/skills/npm.png" alt="Npm" ></a></li>
+                <li><a href="https://webpack.github.io/docs/" target="_blank"><img src="img/skills/webpack.png" alt="Webpack" ></a></li>
+                <li><a href="https://babeljs.io/" target="_blank"><img src="img/skills/babel.png" alt="Babel" ></a></li>
+                <li><a href="gulpjs.com/" target="_blank"><img src="img/skills/gulp.png" alt="Gulp" ></a></li>
+                <li><a href="backbonejs.org/" target="_blank"><img src="img/skills/backbone.png" alt="Backbone" ></a></li>
+              </ul>
+            </div>
+          <div class="container learn">
+            <a class="learnmore">
+              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="section" id="contact">
+          <div class="container">
+            <div class="row">
+              <h1>Get in Touch</h1>
+            </div>
+            <div class="row">
+              <div class="col-md-6 social">
+                 <img src="img/pp.jpg">
+              </div>
+              <div class="col-md-6">
+                <form action="./php/contact.php" id="contact-form" method="post" name="contact-form">
+				          <div id="form-messages"></div>
+                  <div class="form-group">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="sr-only">Phone</label>
+                    <input type="phone" class="form-control" id="phone" name="phone"placeholder="Phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="sr-only">Say Hello</label>
+                    <textarea type="text" class="form-control" id="message" name="message" placeholder="Message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-default" name="submit">Send</button>
+                  <div class="socialsection">
+                    <a class="btn btn-default" href="tel:27833771130">+27 (83) 377-1130</a>
+                    <div class="icongroup">
+                      <a class="icon" href="https://github.com/shaunsaker" target="_blank">
+                        <i class="fa fa-github"></i>
+                      </a>
+                      <a class="icon" href="https://www.linkedin.com/in/shaunsaker" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                      <a class="icon" href="mailto:info@shaunsaker.com" target="_blank">
+                        <i class="fa fa-envelope"></i>
+                      </a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+            <p>©2017 All Rights Reserved.</p>
+        </footer>
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

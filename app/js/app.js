@@ -371,7 +371,7 @@ $("#contact-form input").add("#contact-form textarea").on("input focusout", func
     } 
 });
 
-// AJAX Post
+// Contact Form AJAX Post
 
 $('form').on("submit", function(event) {
 
@@ -421,4 +421,59 @@ $('form').on("submit", function(event) {
             }
         });
     }
+});
+
+/* SKILLS INFO PROGRESS BAR */
+
+function moveProgressBar(el) {
+    var getProgressWrapWidth = $(el).width();
+    var getPercent = ($(el).find('.progress-wrap').data('progress-percent') / 100);
+    var progressTotal = getPercent * getProgressWrapWidth;
+    var animationLength = 500;
+    
+    $(el).find('.progress-bar').stop().animate({
+        left: progressTotal
+    }, animationLength);
+}
+
+/* SKILLS BOX DIRECTIONAL HOVER EFFECT */
+// Adapted from http://codepen.io/anon/pen/oBzxpZ?editors=1111 by Noel Delgado | @pixelia_me and
+// https://tympanus.net/codrops/2012/04/09/direction-aware-hover-effect-with-css3-and-jquery/
+
+var nodes  = $('#skills li');
+
+var getDirection = function (ev, obj) {
+    var w = $(obj).width(),
+        h = $(obj).height(),
+        x = (ev.pageX - $(obj).offset().left - (w / 2) * (w > h ? (h / w) : 1)),
+        y = (ev.pageY - $(obj).offset().top - (h / 2) * (h > w ? (w / h) : 1)),
+        d = Math.round( ( ( ( Math.atan2(y, x) * (180 / Math.PI) ) + 180 ) / 90 ) + 3 ) % 4;
+
+    return d;
+};
+
+var addClass = function ( ev, obj, state ) {
+    var direction = getDirection( ev, obj ),
+        class_suffix = "";
+
+    obj.className = "";
+    
+    switch ( direction ) {
+        case 0 : class_suffix = '-top';    break;
+        case 1 : class_suffix = '-right';  break;
+        case 2 : class_suffix = '-bottom'; break;
+        case 3 : class_suffix = '-left';   break;
+    }
+    
+    obj.classList.add( state + class_suffix );
+};
+
+// bind events
+$(nodes).each(function() {
+    $(this).on("mouseenter touchstart", function (event) {
+        addClass(event, this, 'in');
+        moveProgressBar(this);
+    }).on("mouseleave touchend", function (event) {
+        addClass(event, this, 'out');
+    });
 });

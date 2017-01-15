@@ -519,7 +519,10 @@ canvas {
   justify-content: center; }
 
 .skillsbox li {
-  margin: 2.5%; }
+    padding: 18px;
+    margin: 6px;
+    border: 1px solid $bgLight;
+    border-radius: 4px }
 
 .skillsbox a {
   width: 100px;
@@ -530,7 +533,6 @@ canvas {
 .skillsbox img {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-  transition: filter 0.5s ease;
   display: block;
   max-width: 100%;
   width: 100%;
@@ -540,16 +542,124 @@ canvas {
   position: absolute;
 }
 
-.skillsbox img:hover {
-  filter: none;
-}
-
 #skills .learn a {
   color: $grey;
 }
 
 #skills .learn a:hover {
   color: #556270;
+}
+
+#skills .container-fluid {
+  margin-bottom: 90px;
+}
+
+/* DIRECTIONAL HOVER EFFECT */
+
+$duration: 500ms;
+$timing-fn: ease;
+
+#skills li {
+  position: relative;
+  overflow: hidden;
+
+  .info {
+    // hide-initial-state
+    transform: rotate3d(1,0,0, 90deg);
+    
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    pointer-events: none;
+    background-color: transparentize($black, .1);
+    color: $white;
+  }
+}
+
+.in-top .info {
+   transform-origin: 50% 0%;
+   animation: in-top $duration $timing-fn 0ms 1 forwards;
+}
+.in-right .info {
+  transform-origin: 100% 0%;
+  animation: in-right $duration $timing-fn 0ms 1 forwards;
+}
+.in-bottom .info {
+  transform-origin: 50% 100%;
+  animation: in-bottom $duration $timing-fn 0ms 1 forwards;
+}
+.in-left .info {
+  transform-origin: 0% 0%;
+  animation: in-left $duration $timing-fn 0ms 1 forwards;
+}
+
+.out-top .info {
+  transform-origin: 50% 0%;
+  animation: out-top $duration $timing-fn 0ms 1 forwards;
+}
+.out-right .info {
+  transform-origin: 100% 50%;
+  animation: out-right $duration $timing-fn 0ms 1 forwards;
+}
+.out-bottom .info {
+  transform-origin: 50% 100%;
+  animation: out-bottom $duration $timing-fn 0ms 1 forwards;
+}
+.out-left .info {
+  transform-origin: 0% 0%;
+  animation: out-left $duration $timing-fn 0ms 1 forwards;
+}
+
+@keyframes in-top {
+  from {transform: rotate3d(-1,0,0, 90deg)}
+  to   {transform: rotate3d(0,0,0, 0deg)}}
+@keyframes in-right {
+  from {transform: rotate3d(0,-1,0, 90deg)}
+  to   {transform: rotate3d(0,0,0, 0deg)}}
+@keyframes in-bottom {
+  from {transform: rotate3d(1,0,0, 90deg)}
+  to   {transform: rotate3d(0,0,0, 0deg)}}
+@keyframes in-left {
+  from {transform: rotate3d(0,1,0, 90deg)}
+  to   {transform: rotate3d(0,0,0, 0deg)}}
+
+@keyframes out-top {
+  from {transform: rotate3d(0,0,0, 0deg)}
+  to   {transform: rotate3d(-1,0,0, 104deg)}}
+@keyframes out-right {
+  from {transform: rotate3d(0,0,0, 0deg)}
+  to   {transform: rotate3d(0,-1,0, 104deg)}}
+@keyframes out-bottom {
+  from {transform: rotate3d(0,0,0, 0deg)}
+  to   {transform: rotate3d(1,0,0, 104deg)}}
+@keyframes out-left {
+  from {transform: rotate3d(0,0,0, 0deg)}
+  to   {transform: rotate3d(0,1,0, 104deg)}}
+
+/* SKILLS INFO PROGRESS BAR */
+
+.progress {
+  width: 100%;
+  height: 25px;
+}
+.progress-bar {
+  transition: all 0.5s ease-out;
+}
+.progress-wrap {
+  background: linear-gradient(to right, $bgDark, $black);
+  overflow: hidden;
+  position: relative;
+  .progress-bar {
+    background: $bgLight;
+    left: 0;
+    position: absolute;
+    top: 0;
+    border-radius: 0;
+  }
 }
 
 /* CONTACT */
@@ -563,8 +673,8 @@ canvas {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding-bottom: 5%; }
 
-#contact h1 {
-  margin: 5% 0;
+#contact h1, #skills h1 {
+  margin: 56px 0 48px 0;
 }
 
 .icongroup {
@@ -609,6 +719,7 @@ canvas {
   color: $bgLight;
   font-weight: 300;
   transition: transform 0.5s ease;
+  pointer-events: none; /* allow click through input - won't work in IE */
 
   &.active {
     color: $black;
@@ -793,7 +904,7 @@ footer p {
 
 @media (max-width: 991px) {
   #contact .col-md-6 {
-    margin-bottom: 5%;
+    margin-bottom: 39px;
   }
 }
 
@@ -883,11 +994,5 @@ footer p {
 @media (max-width: 345px) {
   #modal .modaldesc a {
     margin: 5% 0;
-  }
-}
-
-@media (max-width: 499px) {
-  #skills .container-fluid {
-    margin-bottom: 90px;
   }
 }

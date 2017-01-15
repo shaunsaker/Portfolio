@@ -6,57 +6,6 @@ $(".navicon-button").click(function(){
   $(this).toggleClass("open");
 });
 
-// Jelly Nav
-
-// var w = $(".nav > li").first().width();
-
-// var move = function(x) {
-    
-//     if( $.type(x) === "number" ) {
-//         var l = x;
-//     } else if( x instanceof $ ) {
-//         var l = x.position().left;
-//     } else {
-//         l = 0;
-//     }
-
-//     var r = $(".nav").width() - (w + l);
-//     var original = $(".jelly").position().left;
-//     var dir = "right";
-
-//     $(".jelly").removeClass("left right");
-
-//     if( l < original ) {
-//         dir = "left";
-//     }
-    
-//     $(".jelly")
-//         .addClass( dir )
-//         .css("left", l )
-//         .css("right", r );
-        
-//     $(x)
-//         .addClass("selected")
-//         .siblings()
-//         .removeClass("selected");
-
-// }
-
-// var p = 1;
-// move($(".nav > li").eq(0));
-// var ii = setInterval(function() {
-//    if(p>=5){p=0;}
-//     move($(".nav > li").eq(p));
-//     p++;
-// },2000);
-
-// $(".nav > li").on("click", function() {
-    
-//     clearInterval(ii);
-//     move($(this));
-    
-// });
-
 // Navbar active anchors on scroll
 
 var sections = $(".section");
@@ -379,3 +328,97 @@ if (canvas && canvas.getContext) {
         })
     }
 })($);
+
+/* CONTACT FORM FUNCTIONS */
+
+// Form labels
+
+$("#contact-form input").add("#contact-form textarea").each(function() {
+    // In case of page reload - won't need this once ajax implemented
+    if ($(this).val().length > 0) {
+        $(this).prev().addClass("active");
+    }
+});
+
+$("#contact-form input").add("#contact-form textarea").on("focusin", function() {
+    $(this).prev("label").addClass("active");
+}).on("focusout", function() {
+    if ($(this).val().length === 0) {
+        $(this).prev().removeClass("active");
+    }
+});
+
+// Form validation on type
+
+var validated = false;
+
+$("#contact-form input").add("#contact-form textarea").on("input focusout", function() {
+    if ($(this).attr("id") !== "email" && $(this).attr("id") !== "phone" && $(this).val().length > 0) {
+        $(this).parent(".form-group").removeClass("has-error").addClass("has-success").children("span.error").text("").css("opacity", "1");
+        validated = true;
+    }
+    else if ($(this).attr("id") === "email" && $(this).val().trim().split("@").length > 1 && $(this).val().trim().split("@").join("").split(".").length > 1) {
+        $(this).parent(".form-group").removeClass("has-error").addClass("has-success").children("span.error").text("").css("opacity", "1");
+        validated = true;
+    }
+    else if ($(this).attr("id") === "phone" && $(this).val().length >= 10) {
+        $(this).parent(".form-group").removeClass("has-error").addClass("has-success").children("span.error").text("").css("opacity", "1");
+        validated = true;
+    }
+    else {
+        $(this).parent(".form-group").removeClass("has-success");
+        validated = false;
+    } 
+});
+
+// AJAX Post
+
+$('form').on("submit", function(event) {
+
+    event.preventDefault();
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    if (name.length === 0) {
+        $("#name").parent(".form-group").addClass("has-error").children("span.error").text("Please fill in your name").css("opacity", "1");
+        validated = false;
+    }
+    else {
+        $("#name").parent(".form-group").removeClass("has-error").children("span.error").text("").css("opacity", "0");
+        validated = true;
+    }
+
+    if (email.length === 0) {
+        $("#email").parent(".form-group").addClass("has-error").children("span.error").text("Please fill in your email address").css("opacity", "1");
+        validated = false;
+    }
+    else if (email.split("@").length === 1 || email.split("@").join("").split(".").length === 1) {
+        $("#email").parent(".form-group").addClass("has-error").children("span.error").text("Please use a valid email address").css("opacity", "1");
+        validated = true;
+    }
+
+    var data = 'name=' + name + '&email=' + email + '&phone=' + phone + '&message=' + message;
+
+    if (validated) {
+
+        var children = $(".btn[type='submit']").children();
+        $(".btn[type='submit']").text("").addClass("animate");
+
+        $.ajax({
+            type: "POST",
+            url: "../php/contact.php",
+            data: data,
+            cache: false,
+            success: function() {
+                $(".btn[type='submit']").removeClass("animate").addClass("message").text("Message Sent").append(children).find(".fa-check").css("display", "inline-block");
+                $("form").find(".form-group").removeClass("has-success").find("input, textarea").val("");
+            },
+            error: function() {
+                $(".btn[type='submit']").removeClass("animate").addClass("message").text("Message Not Sent. Please try again").append(children).find(".fa-times").css("display", "inline-block");
+            }
+        });
+    }
+});

@@ -564,9 +564,7 @@ $timing-fn: ease;
   overflow: hidden;
 
   .info {
-    // hide-initial-state
-    transform: rotate3d(1,0,0, 90deg);
-    
+    transform: rotate3d(1,0,0, 90deg);    
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -577,6 +575,10 @@ $timing-fn: ease;
     pointer-events: none;
     background-color: transparentize($black, .1);
     color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
   }
 }
 

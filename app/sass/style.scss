@@ -166,6 +166,12 @@ a:hover, a:active, a:focus {
   }
 }
 
+@media (max-width: 767px) {
+  .list-hover-slide a:before {
+    border-bottom: none;
+  }
+}
+
 /* NAVICON */
 
 $duration: .5s;

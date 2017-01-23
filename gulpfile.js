@@ -8,11 +8,13 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
+var webp = require('gulp-webp');
 
 // Paths
 var sassFiles = 'app/**/*.scss',
 	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js', '!app/lib/**/*'],
-	htmlFiles = 'app/**/*.html';
+	htmlFiles = 'app/**/*.html',
+	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'];
 
 gulp.task('browserSync', function() {
 	browserSync.init({
@@ -54,8 +56,17 @@ gulp.task('scripts', function() {
 	    }));
 });
 
-// Default build task
-gulp.task('build', ['styles', 'scripts'], function() {
+// Compress images to webp format
+gulp.task('images', function() {
+	return gulp.src(images, { base : '.'})
+		.pipe(webp({
+			method: 6
+		}))
+		.pipe(gulp.dest('.'));
+});
+
+// Build task for deployment
+gulp.task('build', ['images', 'styles', 'scripts'], function() {
 
 });
 

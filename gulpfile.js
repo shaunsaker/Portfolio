@@ -14,8 +14,7 @@ var webp = require('gulp-webp');
 var sassFiles = 'app/**/*.scss',
 	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js', '!app/lib/**/*'],
 	htmlFiles = 'app/**/*.html',
-	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'],
-	jsxFiles = 'app/**/*.jsx';
+	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'];
 
 gulp.task('browserSync', function() {
 	browserSync.init({
@@ -44,7 +43,14 @@ gulp.task('styles', function() {
 	    }));
 });
 
-// Concatenate our JS files and minify
+// Concatenate our stylesheets
+gulp.task('styles-concat', function() {
+	return gulp.src(['./app/css/lib/bootstrap.min.css', './app/css/lib/font-awesome.min.css', './app/css/style.min.css'], { base: '.' })
+		.pipe(concat('./app/css/styles.min.css'))
+		.pipe(gulp.dest('.'));
+});
+
+// Minify js files
 gulp.task('scripts', function() {
 	return gulp.src(jsFiles, { base : '.'})
 		.pipe(rename(function (path) {
@@ -57,6 +63,13 @@ gulp.task('scripts', function() {
 	    }));
 });
 
+// Concatenate our scripts
+gulp.task('scripts-concat', function() {
+	return gulp.src(['./app/js/lib/jquery.min.js', './app/js/lib/bootstrap.min.js', './app/js/app.min.js'], { base: '.' })
+		.pipe(concat('./app/js/scripts.min.js'))
+		.pipe(gulp.dest('.'));
+});
+
 // Compress images to webp format
 gulp.task('images', function() {
 	return gulp.src(images, { base : '.'})
@@ -67,14 +80,13 @@ gulp.task('images', function() {
 });
 
 // Build task for deployment
-gulp.task('build', ['images', 'styles', 'scripts'], function() {
+gulp.task('build', ['images', 'styles', 'styles-concat', 'scripts', 'scripts-concat'], function() {
 
 });
 
 // Watch our files for changes during development
-gulp.task('watch', ['browserSync', 'styles', 'scripts'], function() {
-	gulp.watch(sassFiles, ['styles']);
-	gulp.watch(jsFiles, ['scripts']);
+gulp.task('watch', ['browserSync', 'styles', 'styles-concat', 'scripts', 'scripts-concat'], function() {
+	gulp.watch(sassFiles, ['styles', 'styles-concat']);
+	gulp.watch(jsFiles, ['scripts', 'scripts-concat']);
 	gulp.watch(htmlFiles, browserSync.reload);
-	gulp.watch(jsxFiles, browserSync.reload);
 });

@@ -13,6 +13,7 @@ var webp = require('gulp-webp');
 // Paths
 var sassFiles = 'app/**/*.scss',
 	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js', '!app/lib/**/*'],
+	jsxFiles = 'app/**/*.jsx',
 	htmlFiles = 'app/**/*.html',
 	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'];
 
@@ -85,8 +86,9 @@ gulp.task('build', ['images', 'styles', 'styles-concat', 'scripts', 'scripts-con
 });
 
 // Watch our files for changes during development
-gulp.task('watch', ['browserSync', 'styles', 'styles-concat', 'scripts', 'scripts-concat'], function() {
+gulp.task('watch', ['styles', 'styles-concat', 'scripts', 'scripts-concat', 'browserSync'], function() {
 	gulp.watch(sassFiles, ['styles', 'styles-concat']);
 	gulp.watch(jsFiles, ['scripts', 'scripts-concat']);
+	gulp.watch(jsxFiles, browserSync.reload);
 	gulp.watch(htmlFiles, browserSync.reload);
 });

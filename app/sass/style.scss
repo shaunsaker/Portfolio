@@ -27,6 +27,11 @@ body {
   visibility: hidden;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 /* BUTTONS */
 
 .btn.btn-default {
@@ -1002,5 +1007,176 @@ footer p {
 @media (max-width: 345px) {
   #modal .modaldesc a {
     margin: 5% 0;
+  }
+}
+
+/* RESUME STYLES */
+
+body.resume {
+  margin: 0;
+  padding: 0;
+  background: $bgDark;
+  background: -webkit-linear-gradient(to left, $bgDark , $bgLight);
+  background: linear-gradient(to left, $bgDark , $bgLight);
+
+  & .bold {
+    font-weight: 700;
+    color: $black;
+  }
+
+  & .page {
+    max-width: 21cm;
+    min-height: 29.7cm;
+    padding: 2cm;
+    margin: 1cm auto;
+    border-radius: 16px;
+    background: $white;
+    margin-top: 96px;
+    box-shadow: -4px 4px 12px -6px rgba(0, 0, 0, 0.5);
+
+    & .block {
+      border: 1px solid $bgLight;
+      border-radius: 16px;
+      margin: 16px 0;
+      padding: 16px;
+    }
+
+    & .contact {
+      margin-bottom: 0;
+    }
+
+    & h1 {
+      color: $bgDark;
+      font-size: 28px;
+    }
+
+    & .intro {
+      img {
+        max-width: 222px;
+        border-radius: 16px;
+      }
+
+      .col-sm-6 {
+        padding-right: 0;
+      }
+    }
+
+    & .contact {
+      & i {
+        color: $bgDark;
+        font-size: 24px;
+
+        &.fa-map-marker {
+          margin-left: 3px;
+        }
+      }
+
+      & .pull-right {
+        line-height: 24px;
+      }
+    }
+
+    & .progress-block {
+      & .pull-left {
+        line-height: 24px;
+      }
+
+      & .pull-right {
+        line-height: 0;
+      }
+
+      & .pr-wrap {
+        display: inline-block;
+        width: 150px;
+        height: 24px;
+        background-color: $bgLight;
+        border-radius: 16px;
+        position: relative;
+
+        & .pr {
+          position: absolute;
+          height: 20px;
+          border-radius: 16px;
+          background: $bgDark;
+          background: -webkit-linear-gradient(to left, $black, $bgDark);
+          background: linear-gradient(to left, $black, $bgDark);
+          top: 2px;
+          left: 3px;
+
+          &.quarter {
+            width: 37.5px
+          }
+          &.half {
+            width: 75px;
+          }
+          &.three-quarter {
+            width: 112.5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+body.resume {
+    & .pull-left, .pull-right {
+      float: none !important;
+      text-align: center;
+      display: block;
+    }
+
+    & .text-right, .text-left, h1 {
+      text-align: center;
+    }
+
+    & p {
+      margin: 0;
+
+      & span:not(.pr) {
+        margin: 8px 0;
+      }
+    }
+
+    & .paragraph {
+      margin: 16px 0;
+    }
+
+    & .page {
+      padding: 0;
+      margin: 96px 16px;
+
+      & .intro .col-sm-6 {
+        padding-right: 15px;
+      }
+
+      & .block:not(.contact) {
+        padding: 16px 0;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid $bgLight;
+      }
+    }
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0.5cm;
+}
+
+@media print {
+  body.resume .page {
+    border: initial;
+    border-radius: initial;
+    width: 210mm;
+    height: 297mm;
+    box-shadow: initial;
+    background: initial;
+    margin: initial;
+
+    & .break {
+      page-break-after: always;
+    }
   }
 }

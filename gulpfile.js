@@ -14,7 +14,8 @@ var webp = require('gulp-webp');
 var sassFiles = 'app/**/*.scss',
 	jsFiles = ['app/**/*.js', '!app/lib/**/*.js', '!app/**/*.min.js', '!app/lib/**/*'],
 	htmlFiles = 'app/**/*.html',
-	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'];
+	images = ['app/**/*.png', 'app/**/*.jpg', 'app/**/*.gif'],
+	jsxFiles = 'app/**/*.jsx';
 
 gulp.task('browserSync', function() {
 	browserSync.init({
@@ -75,4 +76,5 @@ gulp.task('watch', ['browserSync', 'styles', 'scripts'], function() {
 	gulp.watch(sassFiles, ['styles']);
 	gulp.watch(jsFiles, ['scripts']);
 	gulp.watch(htmlFiles, browserSync.reload);
+	gulp.watch(jsxFiles, browserSync.reload);
 });

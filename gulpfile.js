@@ -86,7 +86,7 @@ gulp.task('build', ['images', 'styles', 'styles-concat', 'scripts', 'scripts-con
 });
 
 // Watch our files for changes during development
-gulp.task('watch', ['build', 'browserSync'], function() {
+gulp.task('watch', ['styles', 'styles-concat', 'scripts', 'scripts-concat', 'browserSync'], function() {
 	gulp.watch(sassFiles, ['styles', 'styles-concat']);
 	gulp.watch(jsFiles, ['scripts', 'scripts-concat']);
 	gulp.watch(jsxFiles, browserSync.reload);

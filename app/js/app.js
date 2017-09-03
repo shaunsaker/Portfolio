@@ -125,7 +125,7 @@ function typeWriter(location, phrase, index, interval) {
 		}, interval);
 	}
 }
-$("#typewriter h1").text("");
+
 typeWriter("#typewriter h1", heading, 0, duration);
 
 
@@ -148,8 +148,7 @@ $("#examples .hoverwrapper").on("click", function() {
         if ($(value).find("h3").text() === title) {
             $(value).addClass("active");
             $($("#modal .carousel-indicators li")[index]).addClass("active");
-            console.log($(value).find("iframe").attr("src"));
-            if ($(value).find("iframe").attr("src") === 'about:blank') {
+            if (!$(value).find("iframe").attr("src")) {
                 $(value).find("iframe").attr("src", target);
             }
         }
@@ -169,7 +168,7 @@ function updateModal(slide) {
 
     $(".modal-header h1").text(title);
     $("#sitelink").attr("href", target);
-    if ($(slide).find("iframe").attr("src") === 'about:blank') {
+    if (!$(slide).find("iframe").attr("src")) {
         $(slide).find("iframe").attr("src", target);
     }
     $("#gitlink").attr("href", gitTarget);
